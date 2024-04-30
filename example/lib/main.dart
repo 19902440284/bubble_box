@@ -18,7 +18,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
 }
 
 class BubbleBoxDemo extends StatelessWidget {
-  const BubbleBoxDemo({Key key}) : super(key: key);
+  const BubbleBoxDemo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +87,7 @@ class BubbleBoxDemo extends StatelessWidget {
               gradient: LinearGradient(
                 colors: [
                   Colors.pink,
-                  Colors.orange[700],
+                  Colors.orange[700] ?? Colors.orange,
                 ],
               ),
               blendMode: BlendMode.srcATop,
@@ -96,7 +96,7 @@ class BubbleBoxDemo extends StatelessWidget {
                   gradient: LinearGradient(
                     colors: [
                       Colors.pink,
-                      Colors.orange[700],
+                      Colors.orange[700] ?? Colors.orange,
                     ],
                   ),
                   width: 3,
@@ -121,15 +121,17 @@ class BubbleBoxDemo extends StatelessWidget {
               elevation: 5,
               gradient: LinearGradient(colors: [
                 Colors.red,
-                Colors.orange[700],
-                Colors.orange[500],
+                Colors.orange[700] ?? Colors.orange,
+                Colors.orange[500] ?? Colors.orange,
               ]),
               shape: BubbleShapeBorder(
+                arrowAngle: 0,
+                arrowHeight: 0,
                 border: BubbleBoxBorder(
                   gradient: LinearGradient(
                     colors: [
                       Colors.pink,
-                      Colors.orange[700],
+                      Colors.orange[700] ?? Colors.orange,
                     ],
                   ),
                   width: 3,
@@ -153,8 +155,8 @@ class BubbleBoxDemo extends StatelessWidget {
               elevation: 5,
               gradient: LinearGradient(colors: [
                 Colors.red,
-                Colors.orange[700],
-                Colors.orange[500],
+                Colors.orange[700] ?? Colors.orange,
+                Colors.orange[500] ?? Colors.orange,
               ]),
               shape: BubbleShapeBorder(
                 direction: BubbleDirection.left,
