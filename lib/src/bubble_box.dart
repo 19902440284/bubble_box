@@ -67,18 +67,19 @@ class BubbleBox extends StatelessWidget {
     Widget current = Container(
       padding: padding.add(shape?.dimensions ?? EdgeInsets.zero),
       child: child,
-      color: Colors.transparent, // 使ShaderMask渲染时能够填充满背景
+      // color: Colors.transparent, // 使ShaderMask渲染时能够填充满背景
+      decoration: BoxDecoration(gradient: gradient),
     );
     // 渐变
-    if (gradient != null) {
-      current = ShaderMask(
-        shaderCallback: (Rect rect) {
-          return gradient!.createShader(rect);
-        },
-        blendMode: blendMode,
-        child: current,
-      );
-    }
+    // if (gradient != null) {
+    //   current = ShaderMask(
+    //     shaderCallback: (Rect rect) {
+    //       return gradient!.createShader(rect);
+    //     },
+    //     blendMode: blendMode,
+    //     child: current,
+    //   );
+    // }
     // 气泡框裁剪
     current = Material(
       shape: shape,
